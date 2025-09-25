@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Matte Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="calculator-bootstrap.css">
+</head>
+<body>
+    <div class="container-fluid vh-100 d-flex align-items-center justify-content-center">
+        <!-- Theme Controller -->
+        <div class="theme-controller position-fixed top-0 end-0 m-4">
+            <div class="d-flex align-items-center gap-3">
+                <span class="theme-icon">🌙</span>
+                <input type="range" id="theme-slider" class="theme-slider" min="0" max="100" value="25">
+                <span class="theme-icon">☀️</span>
+            </div>
+        </div>
+
+        <!-- Calculator -->
+        <div class="calculator-container">
+            <div class="calculator">
+                <!-- Display -->
+                <div class="display-container">
+                    <div class="display-secondary" id="display-secondary"></div>
+                    <div class="display-primary" id="display-primary">0</div>
+                </div>
+
+                <!-- Buttons Grid -->
+                <div class="buttons-grid">
+                    <button class="btn-calc btn-function" onclick="clearAll()">AC</button>
+                    <button class="btn-calc btn-function" onclick="clearEntry()">C</button>
+                    <button class="btn-calc btn-function" onclick="deleteLast()">⌫</button>
+                    <button class="btn-calc btn-operator" onclick="inputOperator('/')">÷</button>
+
+                    <button class="btn-calc btn-number" onclick="inputNumber('7')">7</button>
+                    <button class="btn-calc btn-number" onclick="inputNumber('8')">8</button>
+                    <button class="btn-calc btn-number" onclick="inputNumber('9')">9</button>
+                    <button class="btn-calc btn-operator" onclick="inputOperator('*')">×</button>
+
+                    <button class="btn-calc btn-number" onclick="inputNumber('4')">4</button>
+                    <button class="btn-calc btn-number" onclick="inputNumber('5')">5</button>
+                    <button class="btn-calc btn-number" onclick="inputNumber('6')">6</button>
+                    <button class="btn-calc btn-operator" onclick="inputOperator('-')">−</button>
+
+                    <button class="btn-calc btn-number" onclick="inputNumber('1')">1</button>
+                    <button class="btn-calc btn-number" onclick="inputNumber('2')">2</button>
+                    <button class="btn-calc btn-number" onclick="inputNumber('3')">3</button>
+                    <button class="btn-calc btn-operator" onclick="inputOperator('+')">+</button>
+
+                    <button class="btn-calc btn-number btn-zero" onclick="inputNumber('0')">0</button>
+                    <button class="btn-calc btn-number" onclick="inputDecimal()">.</button>
+                    <button class="btn-calc btn-equals" onclick="calculate()">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="calculator-bootstrap.js"></script>
+</body>
+</html>
